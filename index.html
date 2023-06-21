@@ -1,91 +1,92 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>¸ñÊ½»¯ÐÅÓÃ¿¨Êý¾Ý</title>
-<!-- ×îÐÂ°æ±¾µÄ Bootstrap ºËÐÄ CSS ÎÄ¼þ -->
+	<meta charset="utf-8">
+    <title>æ ¼å¼åŒ–ä¿¡ç”¨å¡æ•°æ®</title>
+<!-- æœ€æ–°ç‰ˆæœ¬çš„ Bootstrap æ ¸å¿ƒ CSS æ–‡ä»¶ -->
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
 
-<!-- ×îÐÂµÄ Bootstrap ºËÐÄ JavaScript ÎÄ¼þ -->
+<!-- æœ€æ–°çš„ Bootstrap æ ¸å¿ƒ JavaScript æ–‡ä»¶ -->
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
   <div class="container">
   <div class="jumbotron">
-    <h1>¸ñÊ½»¯ÐÅÓÃ¿¨Êý¾Ý</h1>
-    <p>ÊäÈë¡°¿¨ºÅ ÔÂ Äê CVV¡±»ò¡°¿¨ºÅ Äê ÔÂ CVV¡±£¬ÆäÖÐ·Ö¸ô·û¿ÉÒÔÓÃ³ýÊý×ÖÍâÈÎºÎ×Ö·û´úÌæ</p>
-    <p>½«»á¸ñÊ½»¯³É¡°¿¨ºÅ|ÔÂ|Äê|CVV¡±µÄ¸ñÊ½£¬²¢ÇÒÄê½«ÒÔËÄÎ»Êý×ÖÏÔÊ¾</p>
-    <p>¶ÔÓÚ¿¨ºÅ²»µÈÓÚ16Î»µÄÐÐ½«×Ô¶¯ºöÂÔ</p>
+    <h1>æ ¼å¼åŒ–ä¿¡ç”¨å¡æ•°æ®</h1>
+    <p>è¾“å…¥â€œå¡å· æœˆ å¹´ CVVâ€æˆ–â€œå¡å· å¹´ æœˆ CVVâ€ï¼Œå…¶ä¸­åˆ†éš”ç¬¦å¯ä»¥ç”¨é™¤æ•°å­—å¤–ä»»ä½•å­—ç¬¦ä»£æ›¿</p>
+    <p>å°†ä¼šæ ¼å¼åŒ–æˆâ€œå¡å·|æœˆ|å¹´|CVVâ€çš„æ ¼å¼ï¼Œå¹¶ä¸”å¹´å°†ä»¥å››ä½æ•°å­—æ˜¾ç¤º</p>
+    <p>å¯¹äºŽå¡å·ä¸ç­‰äºŽ16ä½çš„è¡Œå°†è‡ªåŠ¨å¿½ç•¥</p>
   </div>
     <div class="row">
     <div class="col-sm-6">
-    <p>ÊäÈëÊý¾Ý£¬Ã¿ÐÐÒ»¸ö£º</p>
+    <p>è¾“å…¥æ•°æ®ï¼Œæ¯è¡Œä¸€ä¸ªï¼š</p>
     <textarea id="input" rows="10" cols="50"></textarea>
     <br>
-    <button onclick="formatData()"  type="button" class="btn">¸ñÊ½»¯</button>
+    <button onclick="formatData()"  type="button" class="btn">æ ¼å¼åŒ–</button>
     </div>
     <div class="col-sm-6">
-    <p>Êä³öÊý¾Ý£º</p>
+    <p>è¾“å‡ºæ•°æ®ï¼š</p>
     <textarea id="output" rows="10" cols="50" readonly></textarea>
     <br>
-    <button onclick="copyText()"  type="button" class="btn">¸´ÖÆ</button>
+    <button onclick="copyText()"  type="button" class="btn">å¤åˆ¶</button>
         </div>
   </div>
 </div>
     <script>
       function formatData() {
         var input = document.getElementById("input").value;
-        var lines = input.split(/\r?\n/); // ½«ÊäÈëÊý¾Ý·Ö³É¶àÐÐ²¢´æ´¢ÔÚÒ»¸öÊý×éÖÐ
+        var lines = input.split(/\r?\n/); // å°†è¾“å…¥æ•°æ®åˆ†æˆå¤šè¡Œå¹¶å­˜å‚¨åœ¨ä¸€ä¸ªæ•°ç»„ä¸­
         var output = "";
         
-      // Èç¹û¸ÃÐÐÊý¾ÝÎª¿ÕÐÐ£¬ÔòºöÂÔ¸ÃÐÐ
+      // å¦‚æžœè¯¥è¡Œæ•°æ®ä¸ºç©ºè¡Œï¼Œåˆ™å¿½ç•¥è¯¥è¡Œ
 
         
         for (var i = 0; i < lines.length; i++) {
             	if (!lines) {
       		continue;
           }
-          var parts = lines[i].split(/\D+/); // ·Ö¸îÃ¿ÐÐÊý¾Ý²¢´æ´¢ÔÚÒ»¸öÊý×éÖÐ
+          var parts = lines[i].split(/\D+/); // åˆ†å‰²æ¯è¡Œæ•°æ®å¹¶å­˜å‚¨åœ¨ä¸€ä¸ªæ•°ç»„ä¸­
           var cardNumber = parts[0];
           var expMonth = parts[1];
           var expYear = parts[2];
           var cvv = parts[3];
-          // ¼ì²é¿¨ºÅ³¤¶ÈÊÇ·ñÕýÈ·
+          // æ£€æŸ¥å¡å·é•¿åº¦æ˜¯å¦æ­£ç¡®
     if (cardNumber.length === 16) {
-          // ¼ì²éÔÂ·ÝºÍÄê·ÝµÄÎ»ÖÃÊÇ·ñÕýÈ·
+          // æ£€æŸ¥æœˆä»½å’Œå¹´ä»½çš„ä½ç½®æ˜¯å¦æ­£ç¡®
           if (expYear.startsWith("0") || expYear.startsWith("1")) {
-            // Èç¹ûÄê·ÝÒÔ0»ò1¿ªÍ·£¬Ôò½»»»ÔÂ·ÝºÍÄê·Ý
+            // å¦‚æžœå¹´ä»½ä»¥0æˆ–1å¼€å¤´ï¼Œåˆ™äº¤æ¢æœˆä»½å’Œå¹´ä»½
             var temp = expYear;
             expYear = expMonth;
             expMonth = temp;
           }
 
-          // Èç¹ûÄê·ÝÒÔ2»ò3¿ªÍ·£¬ÔòÄê·ÝºÍÔÂ·ÝµÄÎ»ÖÃÕýÈ·
+          // å¦‚æžœå¹´ä»½ä»¥2æˆ–3å¼€å¤´ï¼Œåˆ™å¹´ä»½å’Œæœˆä»½çš„ä½ç½®æ­£ç¡®
           if (expYear.length === 2) {
-            // Èç¹ûÄê·ÝÊÇÁ½Î»Êý£¬ÔòÔÚÆäÇ°Ãæ¼ÓÉÏ¡°20¡±
+            // å¦‚æžœå¹´ä»½æ˜¯ä¸¤ä½æ•°ï¼Œåˆ™åœ¨å…¶å‰é¢åŠ ä¸Šâ€œ20â€
             expYear = "20" + expYear;
           }
-          // ½«Êý¾Ý¸ñÊ½»¯³ÉËùÐèµÄ¸ñÊ½
+          // å°†æ•°æ®æ ¼å¼åŒ–æˆæ‰€éœ€çš„æ ¼å¼
           var formattedData = cardNumber + "|" + expMonth.padStart(2, "0") + "|" + expYear + "|" + cvv;
           output += formattedData + "\n";
         }
 	}
-        // ÔÚÊä³öÎÄ±¾¿òÖÐÏÔÊ¾¸ñÊ½»¯ºóµÄÊý¾Ý
+        // åœ¨è¾“å‡ºæ–‡æœ¬æ¡†ä¸­æ˜¾ç¤ºæ ¼å¼åŒ–åŽçš„æ•°æ®
         document.getElementById("output").value = output;
       }
       
     function copyText() {
-  	/* »ñÈ¡Êä³öÎÄ±¾¿òµÄDOMÔªËØ */
+  	/* èŽ·å–è¾“å‡ºæ–‡æœ¬æ¡†çš„DOMå…ƒç´  */
   	var output = document.getElementById("output");
 
-  	/* Ñ¡ÔñÎÄ±¾ */
+  	/* é€‰æ‹©æ–‡æœ¬ */
       output.select();
 
-      /* ¸´ÖÆµ½¼ôÌù°å */
+      /* å¤åˆ¶åˆ°å‰ªè´´æ¿ */
       document.execCommand("copy");
 
-      /* ÌáÊ¾¸´ÖÆ³É¹¦ */
-      alert("ÒÑ¸´ÖÆµ½¼ôÌù°å£¡");
+      /* æç¤ºå¤åˆ¶æˆåŠŸ */
+      alert("å·²å¤åˆ¶åˆ°å‰ªè´´æ¿ï¼");
     }
     </script>
   </body>
