@@ -46,13 +46,13 @@
             	if (!lines) {
       		continue;
           }
-          var parts = lines[i].split(/\D+/); // 分割每行数据并存储在一个数组中
+          var parts = lines[i].replace(/^[^\d]*/, "").split(/\D+/); // 分割每行数据并存储在一个数组中
           var cardNumber = parts[0];
           var expMonth = parts[1];
           var expYear = parts[2];
           var cvv = parts[3];
           // 检查卡号长度是否正确
-    if (cardNumber.length === 16) {
+    if (cardNumber.length === 15 || cardNumber.length === 16) {
           // 检查月份和年份的位置是否正确
           if (expYear.startsWith("0") || expYear.startsWith("1")) {
             // 如果年份以0或1开头，则交换月份和年份
